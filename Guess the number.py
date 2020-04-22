@@ -44,11 +44,11 @@ while playing == 1:
         guess = int(input("Guess! Guess!! Guess!!!  "))
         print ("Yo! The number is... ",hidden_number)
         if guess == hidden_number:
-            print("Congatulations! You won!")
+            print("You got it right!")
             break
         else:
             guess_power-=1
-            print ("Sorry, it's a loss! you have ",guess_power," lives left.")
+            print ("That was wrong! you have ",guess_power," lives left.")
             try_again = input ("Enter 1 to try again or any other key to quit: ")
             if not try_again == '1':
                 exit()
@@ -57,7 +57,7 @@ while playing == 1:
 
 
     else:
-        print ("No lives left, it's Game Over!")
+        print ("Game Over!")
     
     print ("Do you want to play again? ")
     response = input("Enter 1 for yes or any other key for no: ")
