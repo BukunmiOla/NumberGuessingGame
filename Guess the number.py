@@ -5,6 +5,7 @@ import random
 guess_power = 1
 playing = 1
 
+#This function will assign the appropriate guess power to the level of difficulty chosen
 def difficulty(level):
     
     if level == '1' :
@@ -18,6 +19,8 @@ def difficulty(level):
 
     return guess_power
 
+#This function will determine the range of numbers based on the level
+#I used guess_power in case of random, so it can pick the accurate level
 def pick_range(guess_power):
     if guess_power == 6:
         num_range = 10
@@ -28,7 +31,8 @@ def pick_range(guess_power):
 
     return num_range
 
-    
+
+ #This is the main program   
 print ("Hey! It's good to have you here, This is a number guessing game")
 
 while playing == 1:
@@ -37,9 +41,11 @@ while playing == 1:
     guess_power = difficulty(level)
     print ("Okay! you have ", guess_power, "lives in total")
     num_range = pick_range(guess_power)
+
+    #Check if there's live first before playing
     while guess_power>0:
         print("Are you ready? ")
-        hidden_number = random.randint(1,num_range)
+        hidden_number = random.randint(1,num_range) #pick a random number from the range given
         print ("The hidden number is in the range of 1 to ", num_range)
         guess = int(input("Guess! Guess!! Guess!!!  "))
         print ("Yo! The number is... ",hidden_number)
@@ -52,9 +58,6 @@ while playing == 1:
             try_again = input ("Enter 1 to try again or any other key to quit: ")
             if not try_again == '1':
                 exit()
-
-
-
 
     else:
         print ("Game Over!")
